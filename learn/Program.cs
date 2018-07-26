@@ -12,7 +12,7 @@ namespace learn
     
     public class Program
     {
-        static public int ThisNode;
+        static public int ThisNode = 1;
         
         public static void Main(string[] args)
         {
@@ -36,6 +36,7 @@ namespace learn
             Console.WriteLine("There were {0} lines.", counter);  
             Console.WriteLine(map.Count);
             
+            /*
             ArrayList tt = new ArrayList();
             tt.Add(1);
             tt.Add(2);
@@ -44,7 +45,7 @@ namespace learn
           
             Node node = new Node(tt);
             Console.WriteLine(node.Adj.Count);
-            
+            */
             
             
             Uri baseAddress = new Uri("http://localhost:8081/hello");
@@ -52,19 +53,29 @@ namespace learn
             WebServiceHost host = null;
 
             try {
+                /*
                 host = new WebServiceHost(typeof(HelloWorldService), baseAddress);
                 ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
                 host.Open();
 			
+                /*
                 var names = Environment.GetCommandLineArgs();
                 foreach (var name in names){
                     Console.WriteLine(name);
                 }
+                */
 
+                
+                ClientClass.Client();
+                
+                
                 Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
                 Console.WriteLine("Press <Enter> to stop the service.");
                 Console.ReadLine();
+                
+                
+                
 
                 // Close the ServiceHost.
                 host.Close();
@@ -111,6 +122,36 @@ namespace learn
                 return $"Hello, {name}";
             }
         }
+        
+        /*
+        static public void Client()
+        {
+            
+            using (var wcf = new WebChannelFactory<INodeService>(new Uri("http://localhost:8081/hello"))) {
+                var channel = wcf.CreateChannel();
+    
+                
+                var names = Environment.GetCommandLineArgs();
+                
+                foreach (var name in names ) {
+                    
+    
+                    Console.WriteLine($"Calling SayHello for {name}");
+                    var res = channel.SayHello(name);
+                    Console.WriteLine($"... Response: {res}");
+                    Console.WriteLine("");
+                    
+                    Thread.Sleep (10);
+                }
+                
+                String name = "Enno";
+                Console.WriteLine($"Calling SayHello for {name}");
+                var res = channel.SayHello(name);
+                Console.WriteLine($"... Response: {res}");
+                Console.WriteLine("");
+            }
+        }    
+        */
     
         internal class Node
         {
@@ -161,4 +202,59 @@ namespace learn
             }   
         }   
     }
+
+    public class ClientClass
+    {
+        [ServiceContract()]
+        public interface INodeService {
+            [OperationContract(IsOneWay=true)]
+            [WebGet()]
+            void Message(int from, int to, int tok, int pay);
+            
+            [OperationContract()] 
+            [WebGet(ResponseFormat=WebMessageFormat.Json)]
+            string SayHello(string name);
+        }
+        
+        static public void Client()
+        {
+                /*
+                var wcf = new WebChannelFactory<INodeService>(new Uri("http://localhost:8081/hello"));
+                 */
+            
+                var myChannelFactory = new WebChannelFactory<INodeService>(new Uri("http://localhost:8082/hello"));
+
+            
+                
+                var channel = myChannelFactory.CreateChannel();
+    
+                /*
+                var names = Environment.GetCommandLineArgs();
+                
+                foreach (var name in names ) {
+                    
+    
+                    Console.WriteLine($"Calling SayHello for {name}");
+                    var res = channel.SayHello(name);
+                    Console.WriteLine($"... Response: {res}");
+                    Console.WriteLine("");
+                    
+                    Thread.Sleep (10);
+                }
+                */
+                String name = "Enno";
+                Console.WriteLine($"Calling SayHello for {name}");
+                var res = channel.SayHello(name);
+                Console.WriteLine($"... Response: {res}");
+                Console.WriteLine("");
+            
+        }
+
+        static public void sayHello()
+        {
+            Console.WriteLine("Hellooooo!!!!");
+        }
+
+    }
+    
 }

@@ -6,9 +6,6 @@
       <change beforePath="$PROJECT_DIR$/learn/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/learn/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn/bin/Debug/learn.exe" beforeDir="false" afterPath="$PROJECT_DIR$/learn/bin/Debug/learn.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn/bin/Debug/learn.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/learn/bin/Debug/learn.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/learn.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/learn/learn.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/obj/Debug/learn.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/learn/obj/Debug/learn.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/obj/Debug/learn.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/learn/obj/Debug/learn.csprojResolveAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn/obj/Debug/learn.exe" beforeDir="false" afterPath="$PROJECT_DIR$/learn/obj/Debug/learn.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn/obj/Debug/learn.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/learn/obj/Debug/learn.pdb" afterDir="false" />
     </list>
@@ -27,33 +24,41 @@
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learn/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1456">
-              <caret line="154" column="13" lean-forward="true" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+            <state relative-caret-position="-2535">
+              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
               <folding>
-                <marker date="1532561319409" expanded="true" signature="6:213" ph="..." />
-                <marker date="1532561319409" expanded="true" signature="230:4923" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="262:4921" ph="{...}" />
-                <marker date="1532561319409" expanded="false" signature="333:2483" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="662:959" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="802:945" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="1512:2230" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="1846:1910" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="2252:2371" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="2380:2460" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="2577:2869" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="2887:3020" ph="[...]" />
-                <marker date="1532561319409" expanded="true" signature="3076:3686" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="3358:3457" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="3532:3676" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="3719:4912" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="3872:3997" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4040:4476" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4088:4181" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4202:4462" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4355:4444" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4515:4605" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4657:4757" ph="{...}" />
-                <marker date="1532561319409" expanded="true" signature="4807:4899" ph="{...}" />
+                <marker date="1532579902700" expanded="false" signature="6:213" ph="..." />
+                <marker date="1532579902700" expanded="true" signature="230:7923" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="262:6206" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="364:2728" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="693:990" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="833:976" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="1156:1405" ph="/* ArrayList tt = new ArrayList(); ... */" />
+                <marker date="1532579902700" expanded="true" signature="1560:2475" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="1578:2015" ph="/* host = new WebServiceHost(typeof(HelloWorldService), baseAddress); ... */" />
+                <marker date="1532579902700" expanded="true" signature="2497:2616" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="2625:2705" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="2822:3114" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="3132:3265" ph="[...]" />
+                <marker date="1532579902700" expanded="true" signature="3321:3941" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="3603:3712" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="3787:3931" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="3959:4971" ph="/* static public void Client() ... */" />
+                <marker date="1532579902700" expanded="true" signature="5004:6197" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5157:5282" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5325:5761" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5373:5466" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5487:5747" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5640:5729" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5800:5890" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="5942:6042" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="6092:6184" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="6236:7916" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="6309:6601" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="6646:7802" ph="{...}" />
+                <marker date="1532579902700" expanded="true" signature="6673:6798" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+                <marker date="1532579902700" expanded="true" signature="7044:7526" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+                <marker date="1532579902700" expanded="true" signature="7841:7909" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -65,8 +70,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE2694AB-5B2F-4A0F-A550-A73816AAB5C9/90/1acbe47b/ChannelFactory`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/learn/Program - Copy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/learn/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/learn/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8BB3922-E517-44D9-ACE1-AA6AEDC374EA/d4/4dcbec25/Uri.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/learn/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/learn/Human.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -74,6 +82,7 @@
       <list>
         <option value="$PROJECT_DIR$/learn/Human.cs" />
         <option value="$PROJECT_DIR$/learn/config.txt" />
+        <option value="$PROJECT_DIR$/learn/Program - Copy.cs" />
         <option value="$PROJECT_DIR$/learn/Program.cs" />
       </list>
     </option>
@@ -98,7 +107,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -117,6 +125,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,7 +174,8 @@
       <updated>1529974594606</updated>
       <workItem from="1529974598759" duration="3462000" />
       <workItem from="1532425837459" duration="23000" />
-      <workItem from="1532497611791" duration="10697000" />
+      <workItem from="1532497611791" duration="17161000" />
+      <workItem from="1532579837907" duration="231000" />
     </task>
     <task id="LOCAL-00001" summary="adj">
       <created>1532506546241</created>
@@ -174,11 +184,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532506546242</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="WCF host part1">
+      <created>1532561475260</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532561475261</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14182000" />
+    <option name="totallyTimeSpent" value="20877000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -191,7 +208,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
@@ -202,7 +218,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32969698" />
       <window_info anchor="bottom" id="NuGet" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.26037195" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32969698" />
       <window_info anchor="right" id="Database" order="3" />
@@ -227,43 +243,108 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adj" />
-    <option name="LAST_COMMIT_MESSAGE" value="adj" />
+    <MESSAGE value="WCF host part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="WCF host part1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/learn/Program.cs</url>
+          <line>228</line>
+          <properties documentPath="$PROJECT_DIR$/learn/Program.cs" initialLine="221">
+            <startOffsets>
+              <startOffset value="6975" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="7022" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/learn/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3792">
+          <caret line="237" column="62" lean-forward="true" selection-start-line="237" selection-start-column="62" selection-end-line="237" selection-end-column="62" />
+          <folding>
+            <marker date="1532579902700" expanded="false" signature="6:213" ph="..." />
+            <marker date="1532579902700" expanded="true" signature="230:7923" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="262:6206" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="364:2728" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="693:990" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="833:976" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1156:1405" ph="/* ArrayList tt = new ArrayList(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="1560:2475" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1578:2015" ph="/* host = new WebServiceHost(typeof(HelloWorldService), baseAddress); ... */" />
+            <marker date="1532579902700" expanded="true" signature="2497:2616" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2625:2705" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2822:3114" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3132:3265" ph="[...]" />
+            <marker date="1532579902700" expanded="true" signature="3321:3941" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3603:3712" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3787:3931" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3959:4971" ph="/* static public void Client() ... */" />
+            <marker date="1532579902700" expanded="true" signature="5004:6197" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5157:5282" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5325:5761" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5373:5466" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5487:5747" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5640:5729" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5800:5890" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5942:6042" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6092:6184" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6236:7916" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6309:6601" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6646:7802" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6673:6798" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7044:7526" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7841:7909" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <marker date="1532561319409" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532561319409" expanded="true" signature="230:4923" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="262:4921" ph="{...}" />
-            <marker date="1532561319409" expanded="false" signature="333:2483" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="662:959" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="802:945" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1512:2230" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1846:1910" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2252:2371" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2380:2460" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2577:2869" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2887:3020" ph="[...]" />
-            <marker date="1532561319409" expanded="true" signature="3076:3686" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3358:3457" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3532:3676" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3719:4912" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3872:3997" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4040:4476" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4088:4181" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4202:4462" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4355:4444" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4515:4605" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4657:4757" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4807:4899" ph="{...}" />
+            <marker date="1532579902700" expanded="false" signature="6:213" ph="..." />
+            <marker date="1532579902700" expanded="true" signature="230:7923" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="262:6206" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="364:2728" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="693:990" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="833:976" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1156:1405" ph="/* ArrayList tt = new ArrayList(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="1560:2475" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1578:2015" ph="/* host = new WebServiceHost(typeof(HelloWorldService), baseAddress); ... */" />
+            <marker date="1532579902700" expanded="true" signature="2497:2616" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2625:2705" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2822:3114" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3132:3265" ph="[...]" />
+            <marker date="1532579902700" expanded="true" signature="3321:3941" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3603:3712" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3787:3931" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3959:4971" ph="/* static public void Client() ... */" />
+            <marker date="1532579902700" expanded="true" signature="5004:6197" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5157:5282" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5325:5761" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5373:5466" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5487:5747" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5640:5729" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5800:5890" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5942:6042" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6092:6184" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6236:7916" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6309:6601" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6646:7802" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6673:6798" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7044:7526" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7841:7909" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -273,7 +354,6 @@
         <state relative-caret-position="272">
           <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
           <folding>
-            <marker date="1529978870103" expanded="true" signature="30:468" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="55:466" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="163:213" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="252:343" ph="{...}" />
@@ -287,30 +367,38 @@
         <state relative-caret-position="144">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <marker date="1532561319409" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532561319409" expanded="true" signature="230:4923" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="262:4921" ph="{...}" />
-            <marker date="1532561319409" expanded="false" signature="333:2483" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="662:959" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="802:945" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1512:2230" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1846:1910" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2252:2371" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2380:2460" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2577:2869" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2887:3020" ph="[...]" />
-            <marker date="1532561319409" expanded="true" signature="3076:3686" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3358:3457" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3532:3676" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3719:4912" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3872:3997" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4040:4476" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4088:4181" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4202:4462" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4355:4444" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4515:4605" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4657:4757" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4807:4899" ph="{...}" />
+            <marker date="1532579902700" expanded="false" signature="6:213" ph="..." />
+            <marker date="1532579902700" expanded="true" signature="230:7923" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="262:6206" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="364:2728" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="693:990" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="833:976" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1156:1405" ph="/* ArrayList tt = new ArrayList(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="1560:2475" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1578:2015" ph="/* host = new WebServiceHost(typeof(HelloWorldService), baseAddress); ... */" />
+            <marker date="1532579902700" expanded="true" signature="2497:2616" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2625:2705" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2822:3114" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3132:3265" ph="[...]" />
+            <marker date="1532579902700" expanded="true" signature="3321:3941" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3603:3712" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3787:3931" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3959:4971" ph="/* static public void Client() ... */" />
+            <marker date="1532579902700" expanded="true" signature="5004:6197" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5157:5282" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5325:5761" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5373:5466" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5487:5747" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5640:5729" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5800:5890" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5942:6042" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6092:6184" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6236:7916" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6309:6601" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6646:7802" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6673:6798" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7044:7526" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7841:7909" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -320,7 +408,6 @@
         <state relative-caret-position="272">
           <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
           <folding>
-            <marker date="1529978870103" expanded="true" signature="30:468" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="55:466" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="163:213" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="252:343" ph="{...}" />
@@ -334,7 +421,6 @@
         <state relative-caret-position="400">
           <caret line="25" column="9" selection-start-line="21" selection-start-column="8" selection-end-line="25" selection-end-column="9" />
           <folding>
-            <marker date="1529978870103" expanded="true" signature="30:468" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="55:466" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="163:213" ph="{...}" />
             <marker date="1529978870103" expanded="true" signature="252:343" ph="{...}" />
@@ -350,35 +436,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8BB3922-E517-44D9-ACE1-AA6AEDC374EA/d4/4dcbec25/Uri.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="258" column="6" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE2694AB-5B2F-4A0F-A550-A73816AAB5C9/90/1acbe47b/ChannelFactory`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/Program - Copy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-871">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <marker date="1532577048234" expanded="true" signature="6:213" ph="..." />
+            <marker date="1532577048234" expanded="true" signature="267:6192" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="369:2714" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="698:995" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="838:981" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="1161:1410" ph="/* ArrayList tt = new ArrayList(); ... */" />
+            <marker date="1532577048234" expanded="true" signature="1565:2461" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="1810:2001" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532577048234" expanded="true" signature="2483:2602" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="2611:2691" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="2808:3100" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="3118:3251" ph="[...]" />
+            <marker date="1532577048234" expanded="true" signature="3307:3927" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="3589:3698" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="3773:3917" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="3945:4957" ph="/* static public void Client() ... */" />
+            <marker date="1532577048234" expanded="true" signature="4990:6183" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5143:5268" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5311:5747" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5359:5452" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5473:5733" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5626:5715" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5786:5876" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="5928:6028" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="6078:6170" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="6222:8087" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="6295:6587" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="6632:7973" ph="{...}" />
+            <marker date="1532577048234" expanded="true" signature="6659:6784" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+            <marker date="1532577048234" expanded="true" signature="7215:7697" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532577048234" expanded="true" signature="8012:8080" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/learn/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="154" column="13" lean-forward="true" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+        <state relative-caret-position="-2535">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
           <folding>
-            <marker date="1532561319409" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532561319409" expanded="true" signature="230:4923" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="262:4921" ph="{...}" />
-            <marker date="1532561319409" expanded="false" signature="333:2483" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="662:959" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="802:945" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1512:2230" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="1846:1910" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2252:2371" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2380:2460" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2577:2869" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="2887:3020" ph="[...]" />
-            <marker date="1532561319409" expanded="true" signature="3076:3686" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3358:3457" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3532:3676" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3719:4912" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="3872:3997" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4040:4476" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4088:4181" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4202:4462" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4355:4444" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4515:4605" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4657:4757" ph="{...}" />
-            <marker date="1532561319409" expanded="true" signature="4807:4899" ph="{...}" />
+            <marker date="1532579902700" expanded="false" signature="6:213" ph="..." />
+            <marker date="1532579902700" expanded="true" signature="230:7923" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="262:6206" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="364:2728" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="693:990" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="833:976" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1156:1405" ph="/* ArrayList tt = new ArrayList(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="1560:2475" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="1578:2015" ph="/* host = new WebServiceHost(typeof(HelloWorldService), baseAddress); ... */" />
+            <marker date="1532579902700" expanded="true" signature="2497:2616" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2625:2705" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="2822:3114" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3132:3265" ph="[...]" />
+            <marker date="1532579902700" expanded="true" signature="3321:3941" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3603:3712" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3787:3931" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="3959:4971" ph="/* static public void Client() ... */" />
+            <marker date="1532579902700" expanded="true" signature="5004:6197" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5157:5282" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5325:5761" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5373:5466" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5487:5747" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5640:5729" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5800:5890" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="5942:6042" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6092:6184" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6236:7916" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6309:6601" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6646:7802" ph="{...}" />
+            <marker date="1532579902700" expanded="true" signature="6673:6798" ph="/* var wcf = new WebChannelFactory&lt;INodeService&gt;(new Uri(&quot;http://localhost:8081/hello&quot;)); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7044:7526" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
+            <marker date="1532579902700" expanded="true" signature="7841:7909" ph="{...}" />
           </folding>
         </state>
       </provider>
