@@ -12,13 +12,29 @@ namespace learn
     
     public class Program
     {
-        static public int ThisNode = 1;
+        static public int ThisNode;
+        static public ArrayList Adj;
+        static public Boolean Visited;
+        static public int Parent;
+
+        static public Dictionary<string, int> map;
         
         public static void Main(string[] args)
         {
+            /*
+            //Step 0: Get input
+            var names = Environment.GetCommandLineArgs();
+            foreach (var name in names){
+                Console.WriteLine(name);
+            }
+            */
+            
+            
+            //Step 1: Config.txt -> Map
+            //Input 1
             int counter = 0;  
             string line;  
-            Dictionary<string,int> map = new Dictionary<string, int>();
+            map = new Dictionary<string, int>();
 
             System.IO.StreamReader file = new System.IO.StreamReader(@"/Users/huangxiaolong/RiderProjects/learn/learn/config.txt");  
             while((line = file.ReadLine()) != null)  
@@ -47,27 +63,50 @@ namespace learn
             Console.WriteLine(node.Adj.Count);
             */
             
+            //Step 2: ArrayList -> Node 
+            //Input 2
+            Parent = -1;
+            ArrayList tt = new ArrayList();
+            tt.Add(1);
+            tt.Add(2);
+            tt.Add(3);
+            tt.Add(4);
             
+            if (tt.Count < 2)
+            {
+                Console.WriteLine("Wrong Input!!!");
+            }
+            else
+            {
+                ThisNode = (int)tt[0];
+                Adj = new ArrayList();
+                for (int i = 1; i < tt.Count; i++)
+                {
+                    Adj.Add((int)tt[i]);
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //Step 3: Create Host
             Uri baseAddress = new Uri("http://localhost:8081/hello");
 
             WebServiceHost host = null;
 
             try {
-                /*
+                
                 host = new WebServiceHost(typeof(HelloWorldService), baseAddress);
                 ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
                 host.Open();
 			
-                /*
-                var names = Environment.GetCommandLineArgs();
-                foreach (var name in names){
-                    Console.WriteLine(name);
-                }
-                */
-
-                
-                ClientClass.Client();
+                //ClientClass.ClientTo();
                 
                 
                 Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
@@ -114,6 +153,16 @@ namespace learn
     
             public void Message(int from, int to, int tok, int pay){
                 Console.WriteLine($"... {Millis():F2} {ThisNode} < {from} {to} {tok} {pay}");
+                if (to == ThisNode)
+                {
+                    if (Visited == false && Parent != 0)
+                    {
+                        Parent = from;
+                    }
+                    
+                    
+                }
+
             }
             
             
@@ -216,37 +265,39 @@ namespace learn
             string SayHello(string name);
         }
         
-        static public void Client()
+        static public void ClientTo(int NodeNum)
         {
-                /*
-                var wcf = new WebChannelFactory<INodeService>(new Uri("http://localhost:8081/hello"));
-                 */
-            
-                var myChannelFactory = new WebChannelFactory<INodeService>(new Uri("http://localhost:8082/hello"));
 
+            String url = "http://localhost:"+Program.map[NodeNum.ToString()].ToString()+"/hello";
             
-                
-                var channel = myChannelFactory.CreateChannel();
+            var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(url));
+            
+            var channel = myChannelFactory.CreateChannel();
     
-                /*
-                var names = Environment.GetCommandLineArgs();
+            /*
+            var names = Environment.GetCommandLineArgs();
+            
+            foreach (var name in names ) {
                 
-                foreach (var name in names ) {
-                    
-    
-                    Console.WriteLine($"Calling SayHello for {name}");
-                    var res = channel.SayHello(name);
-                    Console.WriteLine($"... Response: {res}");
-                    Console.WriteLine("");
-                    
-                    Thread.Sleep (10);
-                }
-                */
-                String name = "Enno";
+
                 Console.WriteLine($"Calling SayHello for {name}");
                 var res = channel.SayHello(name);
                 Console.WriteLine($"... Response: {res}");
                 Console.WriteLine("");
+                
+                Thread.Sleep (10);
+            }
+            */
+                
+            String name = "Enno";
+            Console.WriteLine($"Calling SayHello for {name}");
+            var res = channel.SayHello(name);
+            Console.WriteLine($"... Response: {res}");
+            Console.WriteLine("");
+            
+            
+            Console.WriteLine($"This is Node {Program.ThisNode} sending message to {NodeNum}");
+            channel.Message(Program.ThisNode, NodeNum, 1,1);
             
         }
 
