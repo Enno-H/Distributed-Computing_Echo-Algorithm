@@ -20,7 +20,50 @@
     <favorites_list name="learn" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/learn/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+              <folding>
+                <marker date="1532731668477" expanded="true" signature="6:213" ph="..." />
+                <marker date="1532731668477" expanded="true" signature="230:7905" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="290:550" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="556:684" ph="[...]" />
+                <marker date="1532731668477" expanded="true" signature="734:2005" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="995:1789" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1158:1779" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1259:1376" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1454:1529" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1579:1763" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1643:1745" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="1834:1999" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="2037:6085" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="2379:6079" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="2452:2904" ph="/* ArrayList inputList = new ArrayList(); ... */" />
+                <marker date="1532731668477" expanded="true" signature="3154:3203" ph="/* Step 1: Config.txt -&gt; Map ... */" />
+                <marker date="1532731668477" expanded="true" signature="3496:3792" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="3634:3778" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="4010:4060" ph="/* Step 2: ArrayList -&gt; Node ... */" />
+                <marker date="1532731668477" expanded="true" signature="4134:4215" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="4232:4552" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="4459:4538" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="5107:5790" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="5823:5951" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="5971:6064" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="6124:7898" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="6197:6489" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="6547:7267" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="7113:7256" ph="/* Console.WriteLine($&quot;This is Node {Node.ThisNode} sending message to {NodeNum}&quot;); ... */" />
+                <marker date="1532731668477" expanded="true" signature="7322:7784" ph="{...}" />
+                <marker date="1532731668477" expanded="true" signature="7823:7891" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,7 +98,7 @@
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="800" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -63,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -81,7 +125,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -132,6 +175,7 @@
       <workItem from="1532425837459" duration="23000" />
       <workItem from="1532497611791" duration="17161000" />
       <workItem from="1532579837907" duration="7921000" />
+      <workItem from="1532662354981" duration="5441000" />
     </task>
     <task id="LOCAL-00001" summary="adj">
       <created>1532506546241</created>
@@ -161,11 +205,25 @@
       <option name="project" value="LOCAL" />
       <updated>1532589504712</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="WCF host part4">
+      <created>1532662403725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532662403725</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adapted to run on windows">
+      <created>1532664258915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532664258915</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28567000" />
+    <option name="totallyTimeSpent" value="34008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -178,17 +236,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32969698" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32969698" />
       <window_info anchor="bottom" id="NuGet" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.2639485" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32969698" />
       <window_info anchor="right" id="Database" order="3" />
@@ -216,7 +275,9 @@
     <MESSAGE value="WCF host part1" />
     <MESSAGE value="WCF host part2" />
     <MESSAGE value="WCF host part3" />
-    <option name="LAST_COMMIT_MESSAGE" value="WCF host part3" />
+    <MESSAGE value="WCF host part4" />
+    <MESSAGE value="adapted to run on windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapted to run on windows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -229,35 +290,37 @@
         <state relative-caret-position="3792">
           <caret line="237" column="62" lean-forward="true" selection-start-line="237" selection-start-column="62" selection-end-line="237" selection-end-column="62" />
           <folding>
-            <marker date="1532591808074" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532591808074" expanded="true" signature="230:7900" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="291:555" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="569:694" ph="[...]" />
-            <marker date="1532591808074" expanded="true" signature="746:1567" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1016:1369" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1149:1358" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1226:1302" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1429:1561" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1599:6150" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1859:5073" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2015:2072" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2180:2229" ph="/* Step 1: Config.txt -&gt; Map ... */" />
-            <marker date="1532591808074" expanded="true" signature="2525:2822" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2665:2808" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2988:3237" ph="/* ArrayList tt = new ArrayList(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="3263:3313" ph="/* Step 2: ArrayList -&gt; Node ... */" />
-            <marker date="1532591808074" expanded="true" signature="3517:3598" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3615:3849" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3758:3835" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4129:4820" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4842:4961" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4970:5050" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="5127:6139" ph="/* static public void Client() ... */" />
-            <marker date="1532591808074" expanded="true" signature="6180:7893" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6253:6545" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6603:7779" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6899:7329" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="7818:7886" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6:213" ph="..." />
+            <marker date="1532731668477" expanded="true" signature="230:7905" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="290:550" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="556:684" ph="[...]" />
+            <marker date="1532731668477" expanded="true" signature="734:2005" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="995:1789" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1158:1779" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1259:1376" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1454:1529" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1579:1763" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1643:1745" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1834:1999" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2037:6085" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2379:6079" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2452:2904" ph="/* ArrayList inputList = new ArrayList(); ... */" />
+            <marker date="1532731668477" expanded="true" signature="3154:3203" ph="/* Step 1: Config.txt -&gt; Map ... */" />
+            <marker date="1532731668477" expanded="true" signature="3496:3792" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="3634:3778" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4010:4060" ph="/* Step 2: ArrayList -&gt; Node ... */" />
+            <marker date="1532731668477" expanded="true" signature="4134:4215" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4232:4552" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4459:4538" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5107:5790" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5823:5951" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5971:6064" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6124:7898" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6197:6489" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6547:7267" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7113:7256" ph="/* Console.WriteLine($&quot;This is Node {Node.ThisNode} sending message to {NodeNum}&quot;); ... */" />
+            <marker date="1532731668477" expanded="true" signature="7322:7784" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7823:7891" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -267,35 +330,37 @@
         <state relative-caret-position="144">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <marker date="1532591808074" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532591808074" expanded="true" signature="230:7900" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="291:555" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="569:694" ph="[...]" />
-            <marker date="1532591808074" expanded="true" signature="746:1567" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1016:1369" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1149:1358" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1226:1302" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1429:1561" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1599:6150" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1859:5073" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2015:2072" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2180:2229" ph="/* Step 1: Config.txt -&gt; Map ... */" />
-            <marker date="1532591808074" expanded="true" signature="2525:2822" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2665:2808" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2988:3237" ph="/* ArrayList tt = new ArrayList(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="3263:3313" ph="/* Step 2: ArrayList -&gt; Node ... */" />
-            <marker date="1532591808074" expanded="true" signature="3517:3598" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3615:3849" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3758:3835" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4129:4820" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4842:4961" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4970:5050" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="5127:6139" ph="/* static public void Client() ... */" />
-            <marker date="1532591808074" expanded="true" signature="6180:7893" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6253:6545" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6603:7779" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6899:7329" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="7818:7886" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6:213" ph="..." />
+            <marker date="1532731668477" expanded="true" signature="230:7905" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="290:550" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="556:684" ph="[...]" />
+            <marker date="1532731668477" expanded="true" signature="734:2005" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="995:1789" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1158:1779" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1259:1376" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1454:1529" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1579:1763" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1643:1745" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1834:1999" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2037:6085" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2379:6079" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2452:2904" ph="/* ArrayList inputList = new ArrayList(); ... */" />
+            <marker date="1532731668477" expanded="true" signature="3154:3203" ph="/* Step 1: Config.txt -&gt; Map ... */" />
+            <marker date="1532731668477" expanded="true" signature="3496:3792" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="3634:3778" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4010:4060" ph="/* Step 2: ArrayList -&gt; Node ... */" />
+            <marker date="1532731668477" expanded="true" signature="4134:4215" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4232:4552" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4459:4538" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5107:5790" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5823:5951" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5971:6064" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6124:7898" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6197:6489" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6547:7267" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7113:7256" ph="/* Console.WriteLine($&quot;This is Node {Node.ThisNode} sending message to {NodeNum}&quot;); ... */" />
+            <marker date="1532731668477" expanded="true" signature="7322:7784" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7823:7891" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -318,35 +383,37 @@
         <state relative-caret-position="144">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <marker date="1532591808074" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532591808074" expanded="true" signature="230:7900" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="291:555" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="569:694" ph="[...]" />
-            <marker date="1532591808074" expanded="true" signature="746:1567" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1016:1369" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1149:1358" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1226:1302" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1429:1561" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1599:6150" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1859:5073" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2015:2072" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2180:2229" ph="/* Step 1: Config.txt -&gt; Map ... */" />
-            <marker date="1532591808074" expanded="true" signature="2525:2822" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2665:2808" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2988:3237" ph="/* ArrayList tt = new ArrayList(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="3263:3313" ph="/* Step 2: ArrayList -&gt; Node ... */" />
-            <marker date="1532591808074" expanded="true" signature="3517:3598" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3615:3849" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3758:3835" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4129:4820" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4842:4961" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4970:5050" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="5127:6139" ph="/* static public void Client() ... */" />
-            <marker date="1532591808074" expanded="true" signature="6180:7893" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6253:6545" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6603:7779" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6899:7329" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="7818:7886" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6:213" ph="..." />
+            <marker date="1532731668477" expanded="true" signature="230:7905" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="290:550" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="556:684" ph="[...]" />
+            <marker date="1532731668477" expanded="true" signature="734:2005" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="995:1789" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1158:1779" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1259:1376" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1454:1529" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1579:1763" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1643:1745" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1834:1999" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2037:6085" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2379:6079" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2452:2904" ph="/* ArrayList inputList = new ArrayList(); ... */" />
+            <marker date="1532731668477" expanded="true" signature="3154:3203" ph="/* Step 1: Config.txt -&gt; Map ... */" />
+            <marker date="1532731668477" expanded="true" signature="3496:3792" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="3634:3778" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4010:4060" ph="/* Step 2: ArrayList -&gt; Node ... */" />
+            <marker date="1532731668477" expanded="true" signature="4134:4215" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4232:4552" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4459:4538" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5107:5790" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5823:5951" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5971:6064" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6124:7898" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6197:6489" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6547:7267" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7113:7256" ph="/* Console.WriteLine($&quot;This is Node {Node.ThisNode} sending message to {NodeNum}&quot;); ... */" />
+            <marker date="1532731668477" expanded="true" signature="7322:7784" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7823:7891" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -440,38 +507,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learn/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="70" column="41" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="41" />
+        <state relative-caret-position="316">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding>
-            <marker date="1532591808074" expanded="true" signature="6:213" ph="..." />
-            <marker date="1532591808074" expanded="true" signature="230:7900" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="291:555" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="569:694" ph="[...]" />
-            <marker date="1532591808074" expanded="true" signature="746:1567" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1016:1369" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1149:1358" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1226:1302" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1429:1561" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1599:6150" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="1859:5073" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2015:2072" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2180:2229" ph="/* Step 1: Config.txt -&gt; Map ... */" />
-            <marker date="1532591808074" expanded="true" signature="2525:2822" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2665:2808" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="2988:3237" ph="/* ArrayList tt = new ArrayList(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="3263:3313" ph="/* Step 2: ArrayList -&gt; Node ... */" />
-            <marker date="1532591808074" expanded="true" signature="3517:3598" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3615:3849" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="3758:3835" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4129:4820" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4842:4961" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="4970:5050" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="5127:6139" ph="/* static public void Client() ... */" />
-            <marker date="1532591808074" expanded="true" signature="6180:7893" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6253:6545" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6603:7779" ph="{...}" />
-            <marker date="1532591808074" expanded="true" signature="6899:7329" ph="/* var names = Environment.GetCommandLineArgs(); ... */" />
-            <marker date="1532591808074" expanded="true" signature="7818:7886" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6:213" ph="..." />
+            <marker date="1532731668477" expanded="true" signature="230:7905" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="290:550" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="556:684" ph="[...]" />
+            <marker date="1532731668477" expanded="true" signature="734:2005" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="995:1789" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1158:1779" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1259:1376" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1454:1529" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1579:1763" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1643:1745" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="1834:1999" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2037:6085" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2379:6079" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="2452:2904" ph="/* ArrayList inputList = new ArrayList(); ... */" />
+            <marker date="1532731668477" expanded="true" signature="3154:3203" ph="/* Step 1: Config.txt -&gt; Map ... */" />
+            <marker date="1532731668477" expanded="true" signature="3496:3792" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="3634:3778" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4010:4060" ph="/* Step 2: ArrayList -&gt; Node ... */" />
+            <marker date="1532731668477" expanded="true" signature="4134:4215" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4232:4552" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="4459:4538" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5107:5790" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5823:5951" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="5971:6064" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6124:7898" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6197:6489" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="6547:7267" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7113:7256" ph="/* Console.WriteLine($&quot;This is Node {Node.ThisNode} sending message to {NodeNum}&quot;); ... */" />
+            <marker date="1532731668477" expanded="true" signature="7322:7784" ph="{...}" />
+            <marker date="1532731668477" expanded="true" signature="7823:7891" ph="{...}" />
           </folding>
         </state>
       </provider>

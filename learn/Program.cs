@@ -30,15 +30,34 @@ namespace learn
 
         public static Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
 
-
+        //收信反应
         public void Message(int from, int to, int tok, int pay)
         {
             Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
-            if (to == Node.ThisNode)
+            if (to == Node.ThisNode && Node.Open == true)
             {
-                if (Node.Visited == false && Node.Parent != 0)
+                
+                //选parents
+                if (Node.Visited == false)
                 {
                     Node.Parent = from;
+                    Node.Visited = true;
+                }
+
+                Node.rec++;
+
+                if (Node.rec >= Node.Adj.Count)
+                {
+                    Node.Open = false;
+                }
+
+
+                foreach (int neigh in Node.Adj)
+                {
+                    if (neigh != Node.Parent)
+                    {
+                        ClientClass.sendMessageTo(neigh);
+                    }
                 }
 
 
@@ -57,8 +76,10 @@ namespace learn
     {
         static public int ThisNode;
         static public ArrayList Adj;
-        static public Boolean Visited;
+        static public Boolean Visited = false;
+        static public Boolean Open = true;
         static public int Parent;
+        static public int rec = 0;
     
         static public Dictionary<string, int> map;
 
@@ -166,6 +187,7 @@ namespace learn
                 host.Open();
     
                 //ClientClass.ClientTo();
+                ClientClass.sendMessageTo(2);
     
     
                 Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
@@ -207,34 +229,39 @@ namespace learn
             string SayHello(string name);
         }
         
-        static public void Client()
+        static public void ClientTo(int NodeNum)
         {
-                
-                var myChannelFactory = new WebChannelFactory<INodeService>(new Uri("http://localhost:8082/hello"));
-         
-     
-                var channel = myChannelFactory.CreateChannel();
-    
-                /*
-                var names = Environment.GetCommandLineArgs();
-                
-                foreach (var name in names ) {
-                    
-    
-                    Console.WriteLine($"Calling SayHello for {name}");
-                    var res = channel.SayHello(name);
-                    Console.WriteLine($"... Response: {res}");
-                    Console.WriteLine("");
-                    
-                    Thread.Sleep (10);
-                }
-                */
-                String name = "Enno";
-                Console.WriteLine($"Calling SayHello for {name}");
-                var res = channel.SayHello(name);
-                Console.WriteLine($"... Response: {res}");
-                Console.WriteLine("");
+
+            String url = "http://localhost:" + Node.map[NodeNum.ToString()].ToString() + "/hello";
+
+            var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(url));
+
+            var channel = myChannelFactory.CreateChannel();
+
+            String name = "Enno";
+            Console.WriteLine($"This is {Node.ThisNode}, sending the name:{name} to {NodeNum}");
+            var res = channel.SayHello(name);
+            Console.WriteLine($"... Node {Node.ThisNode} get Response: {res}");
+            Console.WriteLine("");
+
+
+            //Console.WriteLine($"This is Node {Node.ThisNode} sending message to {NodeNum}");
+            //channel.Message(Node.ThisNode, NodeNum, 1, 1);
+
+        }
+
+        static public void sendMessageTo(int NodeNum)
+        {
+            String arcUrl = "http://localhost:" + Node.map["0"].ToString() + "/hello";
             
+            var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
+            
+            var channel = myChannelFactory.CreateChannel();
+            
+            Console.WriteLine($"Node {Node.ThisNode} is sending message to Node {NodeNum} ");
+            
+            channel.Message(Node.ThisNode, NodeNum, 1, 1);
+
         }
 
         static public void sayHello()
