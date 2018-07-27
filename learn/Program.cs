@@ -9,8 +9,48 @@ using System.Threading;
 
 namespace learn
 {
+    [ServiceContract()]
+    public interface INodeService {
+        [OperationContract(IsOneWay=true)]
+        [WebGet()]
+        void Message(int from, int to, int tok, int pay);
+            
+        [OperationContract()] 
+        [WebGet(ResponseFormat=WebMessageFormat.Json)]
+        string SayHello(string name);
+    }
+        
+    [ServiceBehavior(
+        InstanceContextMode=InstanceContextMode.Single, 
+        ConcurrencyMode=ConcurrencyMode.Multiple)] 
+    public class HelloWorldService : INodeService {
+        public static Func<int> Tid = () => Thread.CurrentThread.ManagedThreadId;
+            
+        public static Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
+            
     
-    public class Program
+        public void Message(int from, int to, int tok, int pay){
+            Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
+            if (to == Node.ThisNode)
+            {
+                if (Node.Visited == false && Node.Parent != 0)
+                {
+                    Node.Parent = from;
+                }
+                    
+                    
+            }
+
+        }
+              
+        public string SayHello(string name) {
+            Console.WriteLine($"[{Tid()}] [{Millis()}] SayHello received: {name}");
+            return $"Hello, {name}";
+        }
+    }
+    
+    
+    public class Node
     {
         static public int ThisNode;
         static public ArrayList Adj;
@@ -21,13 +61,16 @@ namespace learn
         
         public static void Main(string[] args)
         {
-            /*
+            
             //Step 0: Get input
-            var names = Environment.GetCommandLineArgs();
-            foreach (var name in names){
-                Console.WriteLine(name);
+            var inputs = Environment.GetCommandLineArgs();
+            foreach (var input in inputs){
+                Console.WriteLine(input);
             }
-            */
+
+            Console.WriteLine(inputs[0]);
+            
+            
             
             
             //Step 1: Config.txt -> Map
@@ -131,46 +174,7 @@ namespace learn
         
         
         
-        [ServiceContract()]
-        public interface INodeService {
-            [OperationContract(IsOneWay=true)]
-            [WebGet()]
-            void Message(int from, int to, int tok, int pay);
-            
-            [OperationContract()] 
-            [WebGet(ResponseFormat=WebMessageFormat.Json)]
-            string SayHello(string name);
-        }
         
-        [ServiceBehavior(
-            InstanceContextMode=InstanceContextMode.Single, 
-            ConcurrencyMode=ConcurrencyMode.Multiple)] 
-        public class HelloWorldService : INodeService {
-            public static Func<int> Tid = () => Thread.CurrentThread.ManagedThreadId;
-            
-            public static Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
-            
-    
-            public void Message(int from, int to, int tok, int pay){
-                Console.WriteLine($"... {Millis():F2} {ThisNode} < {from} {to} {tok} {pay}");
-                if (to == ThisNode)
-                {
-                    if (Visited == false && Parent != 0)
-                    {
-                        Parent = from;
-                    }
-                    
-                    
-                }
-
-            }
-            
-            
-            public string SayHello(string name) {
-                Console.WriteLine($"[{Tid()}] [{Millis()}] SayHello received: {name}");
-                return $"Hello, {name}";
-            }
-        }
         
         /*
         static public void Client()
@@ -202,54 +206,6 @@ namespace learn
         }    
         */
     
-        internal class Node
-        {
-            private int id;
-            private Boolean visited;
-            private ArrayList adj;
-                
-            public Node()
-            {
-                id = -1;
-                visited = false;
-                adj = new ArrayList();
-            }
-    
-            public Node(ArrayList al)
-            {
-                if (al.Count < 2)
-                {
-                    Console.WriteLine("Wrong Input!!!");
-                }
-                else
-                {
-                    id = (int)al[0];
-                    adj = new ArrayList();
-                    for (int i = 1; i < al.Count; i++)
-                    {
-                        adj.Add((int)al[i]);
-                    }
-                }
-            }
-            
-            public int Id
-            {
-                get => id;
-                set => id = value;
-            }
-                
-            public Boolean Visited
-            {
-                get => visited;
-                set => visited = value;
-            }
-                
-            public ArrayList Adj
-            {
-                get => adj;
-                set => adj = value;
-            }   
-        }   
     }
 
     public class ClientClass
@@ -268,7 +224,7 @@ namespace learn
         static public void ClientTo(int NodeNum)
         {
 
-            String url = "http://localhost:"+Program.map[NodeNum.ToString()].ToString()+"/hello";
+            String url = "http://localhost:"+Node.map[NodeNum.ToString()].ToString()+"/hello";
             
             var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(url));
             
@@ -296,8 +252,8 @@ namespace learn
             Console.WriteLine("");
             
             
-            Console.WriteLine($"This is Node {Program.ThisNode} sending message to {NodeNum}");
-            channel.Message(Program.ThisNode, NodeNum, 1,1);
+            Console.WriteLine($"This is Node {Node.ThisNode} sending message to {NodeNum}");
+            channel.Message(Node.ThisNode, NodeNum, 1,1);
             
         }
 
