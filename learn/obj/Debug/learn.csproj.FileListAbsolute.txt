@@ -1,6 +1,0 @@
-/Users/huangxiaolong/RiderProjects/learn/learn/bin/Debug/learn.exe
-/Users/huangxiaolong/RiderProjects/learn/learn/bin/Debug/learn.pdb
-/Users/huangxiaolong/RiderProjects/learn/learn/obj/Debug/learn.csprojResolveAssemblyReference.cache
-/Users/huangxiaolong/RiderProjects/learn/learn/obj/Debug/learn.csproj.CoreCompileInputs.cache
-/Users/huangxiaolong/RiderProjects/learn/learn/obj/Debug/learn.exe
-/Users/huangxiaolong/RiderProjects/learn/learn/obj/Debug/learn.pdb
