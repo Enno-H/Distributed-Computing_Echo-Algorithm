@@ -59,25 +59,20 @@ public class NodeService : INodeService
                 Node.Open = false;
             }
 
-            /*
-            if (Node.ThisNode == 2){
-                Console.WriteLine("This is Node 2 so it will send message to 3 directly");
-                ClientClass.directSendMessageTo(3);
-               
-
-            }
-            */
-            
-
-            foreach (object neigh in Node.Adj)
+            if (Node.ThisNode == 3)
             {
-                Console.WriteLine("hhhh");
-                if (neigh != Node.Parent)
+                foreach (object neigh in Node.Adj)
                 {
-                    ClientClass.sendMessageTo(neigh);
-                    Console.WriteLine($"{Node.ThisNode} is sending message to its neigh: {neigh}");
+                    if (!Node.Parent.Equals(neigh))
+                    {
+                        Console.WriteLine($"{Node.ThisNode} is sending message to its neigh: {neigh}");
+                        ClientClass.directSendMessageTo(Convert.ToInt32(neigh));
+                    }
                 }
             }
+            
+
+            Console.WriteLine($"The father of Node {Node.ThisNode} is {Node.Parent}; Visited: {Node.Visited}");
         }
     }
 
@@ -119,7 +114,7 @@ public class Node
         inputList.RemoveAt(0);
         inputList.RemoveAt(0);
 
-        Console.WriteLine("The inputList length is " + inputList.Count+" and the first is "+inputList[0]);
+        //Console.WriteLine("The inputList length is " + inputList.Count+" and the first is "+inputList[0]);
 
 
         //Step 1: Config.txt -> Map
@@ -167,7 +162,12 @@ public class Node
         }
 
         Console.WriteLine("This Node is: " + ThisNode);
-        Console.WriteLine("It has Adj: " + Adj.Count + ", the first is " + Adj[0]);
+        Console.WriteLine($"It has {Adj.Count} neighbers, they are:");
+        foreach (object neigh in Node.Adj)
+        {
+            Console.WriteLine($"    {neigh}");
+        }
+
 
 
         //Step 3: Create Host
@@ -192,9 +192,10 @@ public class Node
 
             if (Node.ThisNode == 1) {
 
-                Console.WriteLine("!!!This is Node 1 so it will send message to Node 2");
+                //Console.WriteLine("!!!This is Node 1 so it will send message to Node 2");
                 ClientClass.directSendMessageTo(2);
-                //ClientClass.sayTo(2);
+                ClientClass.directSendMessageTo(3);
+                ClientClass.directSendMessageTo(4);
             }
 
             Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
