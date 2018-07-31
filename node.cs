@@ -22,10 +22,6 @@ public interface INodeService
     [OperationContract(IsOneWay = true)]
     [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
     void Message(int from, int to, int tok, int pay);
-
-    [OperationContract()]
-    [WebInvoke]
-    string SayHello(string name);
 }
 
 [ServiceBehavior(
@@ -53,17 +49,19 @@ public class NodeService : INodeService
             }
 
             Node.rec++;
+            Console.WriteLine("rec = "+Node.rec);
+
 
             if (Node.rec >= Node.Adj.Count)
             {
                 Node.Open = false;
+                Console.WriteLine($"Node {Node.ThisNode} is closed");
             }
 
-            if (Node.ThisNode == 3)
-            {
+            if(Node.Open == true){
                 foreach (object neigh in Node.Adj)
                 {
-                    if (!Node.Parent.Equals(neigh))
+                    if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                     {
                         Console.WriteLine($"{Node.ThisNode} is sending message to its neigh: {neigh}");
                         ClientClass.directSendMessageTo(Convert.ToInt32(neigh));
@@ -71,22 +69,8 @@ public class NodeService : INodeService
                 }
             }
             
-
             Console.WriteLine($"The father of Node {Node.ThisNode} is {Node.Parent}; Visited: {Node.Visited}");
         }
-    }
-
-    public string SayHello(string name)
-    {
-        Console.WriteLine($"[{Tid()}] [{Millis()}] {Node.ThisNode} SayHello received: {name}");
-
-        if (Node.ThisNode == 2)
-        {
-            Console.WriteLine("This is Node 2 so it will say hello to 3");
-            ClientClass.sayTo(3);
-        }
-
-        return $"{Node.ThisNode} Hello, {name}";
     }
 }
 
@@ -108,13 +92,10 @@ public class Node
         ArrayList inputList = new ArrayList();
         var inputs = Environment.GetCommandLineArgs();
         foreach (var input in inputs){
-            //Console.WriteLine(input);
             inputList.Add(input);
         }
         inputList.RemoveAt(0);
         inputList.RemoveAt(0);
-
-        //Console.WriteLine("The inputList length is " + inputList.Count+" and the first is "+inputList[0]);
 
 
         //Step 1: Config.txt -> Map
@@ -186,10 +167,6 @@ public class Node
 
             host.Open();
 
-            //ClientClass.ClientTo();
-            //ClientClass.sendMessageTo(2);
-            //ClientClass.sendMessageTo(3);
-
             if (Node.ThisNode == 1) {
 
                 //Console.WriteLine("!!!This is Node 1 so it will send message to Node 2");
@@ -231,10 +208,6 @@ public class ClientClass
         [OperationContract(IsOneWay = true)]
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
         void Message(int from, int to, int tok, int pay);
-
-        [OperationContract()]
-        [WebInvoke]
-        string SayHello(string name);
     }
 
     
@@ -270,19 +243,5 @@ public class ClientClass
 
         Console.WriteLine("&&Send Over");
 
-    }
-
-    static public void sayTo(int NodeNum) {
-        String Url = "http://localhost:" + Node.map[NodeNum.ToString()].ToString() + "/hello";
-
-        var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(Url));
-
-        var channel = myChannelFactory.CreateChannel();
-
-        Console.WriteLine($"&&Send Begin: Node {Node.ThisNode} says Hello to Node {NodeNum}");
-
-        channel.SayHello("Enno");
-
-        Console.WriteLine("&&Send Over");
     }
 }
