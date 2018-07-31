@@ -126,7 +126,7 @@ public class Node
             ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
             host.Open();
-            ClientClass.sendMessageTo(1);
+            ClientClass.sendMessageTo(1,0);
 
             Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.WriteLine("Press <Enter> to stop the service.");
@@ -178,11 +178,11 @@ public class ClientClass
 
         Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {from} {to} {tok} {pay}");
 
-        channel.Message(from, to, 1, 1);
+        channel.Message(from, to, 1, pay);
 
     }
 
-    static public void sendMessageTo(int NodeNum)
+    static public void sendMessageTo(int NodeNum, int payload)
     {
         String arcUrl = "http://localhost:" + Node.map[NodeNum.ToString()].ToString() + "/hello";
 
@@ -192,7 +192,7 @@ public class ClientClass
 
         Console.WriteLine($"*****Node {Node.ThisNode} is sending message to Node {NodeNum} ");
 
-        channel.Message(Node.ThisNode, NodeNum, 1, 1);
+        channel.Message(Node.ThisNode, NodeNum, 1, payload);
 
     }
 }

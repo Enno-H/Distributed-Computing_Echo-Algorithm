@@ -39,6 +39,7 @@ public class NodeService : INodeService
     {
         if (Node.Open == true) {
             Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
+            Node.payload = Node.payload + pay;
 
             if (Node.Visited == false)
             {
@@ -47,33 +48,37 @@ public class NodeService : INodeService
             }
 
             Node.rec++;
+            if (from == 0) {
+                Node.rec = Node.rec - 1;
+            }
             Console.WriteLine("rec = " + Node.rec);
 
             if (Node.rec >= Node.Adj.Count)
             {
                 Node.Open = false;
                 Console.WriteLine($"Node {Node.ThisNode} is closed");
-                ClientClass.sendToParent();
+                ClientClass.sendToParent(Node.payload+1);
             }
 
             Thread.Sleep(1000);
 
             if (tok == 1 && Node.Open == true)
             {
-                Thread.Sleep(1000);
                 foreach (object neigh in Node.Adj)
                 {
                     if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                     {
                         Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {Node.ThisNode} {neigh} {tok} {pay}");
-                        ClientClass.sendMessageTo(Convert.ToInt32(neigh));
+                        //Console.WriteLine($"{Node.Open}");
+                        ClientClass.sendMessageTo(Convert.ToInt32(neigh),Node.payload);
                     }
                 }
             }
-
+            /*
             if (tok == 2 && Node.Open == true) {
-                ClientClass.sendToParent();
+                ClientClass.sendToParent(Node.payload+1);
             }
+            */
         }
     }
 }
@@ -86,6 +91,7 @@ public class Node
     static public Boolean Open = true;
     static public int Parent;
     static public int rec = 0;
+    static public int payload = 0;
 
     static public Dictionary<string, int> map;
 
@@ -207,7 +213,7 @@ public class ClientClass
     }
 
     
-    static public void sendMessageTo(int NodeNum)
+    static public void sendMessageTo(int NodeNum,int payload)
     {
         String arcUrl = "http://localhost:" + Node.map["0"].ToString() + "/hello";
 
@@ -217,7 +223,7 @@ public class ClientClass
 
         //Console.WriteLine($"&&Send Begin: Node {Node.ThisNode} is sending message to Node {NodeNum} ");
 
-        channel.Message(Node.ThisNode, NodeNum, 1, 1);
+        channel.Message(Node.ThisNode, NodeNum, 1, payload);
 
         //Console.WriteLine("&&Send Over");
 
@@ -236,8 +242,8 @@ public class ClientClass
     }
     */
 
-    static public void sendToParent() {
-        String Url = "http://localhost:" + Node.map[Node.Parent.ToString()].ToString() + "/hello";
+    static public void sendToParent(int payload) {
+        String Url = "http://localhost:" + Node.map["0"].ToString() + "/hello";
 
         var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(Url));
 
@@ -245,7 +251,7 @@ public class ClientClass
 
         Console.WriteLine($"*****Send Begin: Node {Node.ThisNode} is sending message to Parent {Node.Parent}");
 
-        channel.Message(Node.ThisNode, Node.Parent, 2, 1);
+        channel.Message(Node.ThisNode, Node.Parent, 2, payload);
 
         Console.WriteLine("&&Send Over");
 
