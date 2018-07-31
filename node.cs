@@ -39,7 +39,14 @@ public class NodeService : INodeService
     {
         Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
         Console.WriteLine($"*Receive: Node {Node.ThisNode} ({to}) has received message from {from}");
-        if (to == Node.ThisNode && Node.Open == true)
+
+        /*
+        if (tok == 2) {
+            ClientClass.sendToParent();
+        }
+        */
+
+        if (to == Node.ThisNode && Node.Open == true && tok == 1)
         {
             //ѡparents
             if (Node.Visited == false)
@@ -56,6 +63,7 @@ public class NodeService : INodeService
             {
                 Node.Open = false;
                 Console.WriteLine($"Node {Node.ThisNode} is closed");
+                ClientClass.sendToParent();
             }
 
             if(Node.Open == true){
@@ -240,6 +248,21 @@ public class ClientClass
         Console.WriteLine($"&&Send Begin: Node {Node.ThisNode} is directly sending message to Node {NodeNum} +{Url}");
 
         channel.Message(Node.ThisNode, NodeNum, 1, 1);
+
+        Console.WriteLine("&&Send Over");
+
+    }
+
+    static public void sendToParent() {
+        String Url = "http://localhost:" + Node.map[Node.Parent.ToString()].ToString() + "/hello";
+
+        var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(Url));
+
+        var channel = myChannelFactory.CreateChannel();
+
+        Console.WriteLine($"*****Send Begin: Node {Node.ThisNode} is sending message to Parent {Node.Parent}");
+
+        channel.Message(Node.ThisNode, Node.Parent, 2, 1);
 
         Console.WriteLine("&&Send Over");
 
