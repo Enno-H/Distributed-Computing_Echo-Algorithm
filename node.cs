@@ -37,18 +37,9 @@ public class NodeService : INodeService
     //收信反应
     public void Message(int from, int to, int tok, int pay)
     {
-        Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
-        Console.WriteLine($"*Receive: Node {Node.ThisNode} ({to}) has received message from {from}");
+        if (Node.Open == true) {
+            Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
 
-        /*
-        if (tok == 2) {
-            ClientClass.sendToParent();
-        }
-        */
-
-        if (to == Node.ThisNode && Node.Open == true && tok == 1)
-        {
-            //选parents
             if (Node.Visited == false)
             {
                 Node.Parent = from;
@@ -56,8 +47,7 @@ public class NodeService : INodeService
             }
 
             Node.rec++;
-            Console.WriteLine("rec = "+Node.rec);
-
+            Console.WriteLine("rec = " + Node.rec);
 
             if (Node.rec >= Node.Adj.Count)
             {
@@ -66,18 +56,24 @@ public class NodeService : INodeService
                 ClientClass.sendToParent();
             }
 
-            if(Node.Open == true){
+            Thread.Sleep(1000);
+
+            if (tok == 1 && Node.Open == true)
+            {
+                Thread.Sleep(1000);
                 foreach (object neigh in Node.Adj)
                 {
                     if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                     {
-                        Console.WriteLine($"{Node.ThisNode} is sending message to its neigh: {neigh}");
-                        ClientClass.directSendMessageTo(Convert.ToInt32(neigh));
+                        Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {Node.ThisNode} {neigh} {tok} {pay}");
+                        ClientClass.sendMessageTo(Convert.ToInt32(neigh));
                     }
                 }
             }
-            
-            Console.WriteLine($"The father of Node {Node.ThisNode} is {Node.Parent}; Visited: {Node.Visited}");
+
+            if (tok == 2 && Node.Open == true) {
+                ClientClass.sendToParent();
+            }
         }
     }
 }
@@ -151,7 +147,7 @@ public class Node
         }
 
         Console.WriteLine("This Node is: " + ThisNode);
-        Console.WriteLine($"It has {Adj.Count} neighbers, they are:");
+        Console.WriteLine($"It has {Adj.Count} neighbours, they are:");
         foreach (object neigh in Node.Adj)
         {
             Console.WriteLine($"    {neigh}");
@@ -175,15 +171,7 @@ public class Node
 
             host.Open();
 
-            if (Node.ThisNode == 1) {
-
-                //Console.WriteLine("!!!This is Node 1 so it will send message to Node 2");
-                ClientClass.directSendMessageTo(2);
-                ClientClass.directSendMessageTo(3);
-                ClientClass.directSendMessageTo(4);
-            }
-
-            Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
+            Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.WriteLine("Press <Enter> to stop the service.");
             Console.ReadLine();
 
@@ -223,35 +211,30 @@ public class ClientClass
     {
         String arcUrl = "http://localhost:" + Node.map["0"].ToString() + "/hello";
 
-        Console.WriteLine(arcUrl);
-
         var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
 
         var channel = myChannelFactory.CreateChannel();
 
-        Console.WriteLine($"Node {Node.ThisNode} is sending message to Node {NodeNum} ");
+        //Console.WriteLine($"&&Send Begin: Node {Node.ThisNode} is sending message to Node {NodeNum} ");
 
         channel.Message(Node.ThisNode, NodeNum, 1, 1);
 
-    }
+        //Console.WriteLine("&&Send Over");
 
+
+    }
+    /*
     static public void directSendMessageTo(int NodeNum)
     {
         String Url = "http://localhost:" + Node.map[NodeNum.ToString()].ToString() + "/hello";
-
-        //Console.WriteLine(Url);
 
         var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(Url));
 
         var channel = myChannelFactory.CreateChannel();
 
-        Console.WriteLine($"&&Send Begin: Node {Node.ThisNode} is directly sending message to Node {NodeNum} +{Url}");
-
         channel.Message(Node.ThisNode, NodeNum, 1, 1);
-
-        Console.WriteLine("&&Send Over");
-
     }
+    */
 
     static public void sendToParent() {
         String Url = "http://localhost:" + Node.map[Node.Parent.ToString()].ToString() + "/hello";

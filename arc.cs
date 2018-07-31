@@ -11,9 +11,8 @@ using System.Threading;
 public interface INodeService
 {
     [OperationContract(IsOneWay = true)]
-    [WebGet()]
+    [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
     void Message(int from, int to, int tok, int pay);
-    
 }
 
 
@@ -32,7 +31,14 @@ public class NodeService : INodeService
     {
         Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
 
-        ClientClass.deliverMessageTo(from, to);
+        if (to != 0) {
+            ClientClass.deliverMessageTo(from, to, tok, pay);
+        }
+
+        if (to == 0) {
+            Console.WriteLine("Finish!!!");
+        }
+        
 
     }
 }
@@ -41,7 +47,12 @@ public class NodeService : INodeService
 public class Node
 {
 
-    static public int ThisNode = 0;
+    static public int ThisNode;
+    static public ArrayList Adj;
+    static public Boolean Visited = false;
+    static public Boolean Open = true;
+    static public int Parent;
+    static public int rec = 0;
 
     static public Dictionary<string, int> map;
 
@@ -115,11 +126,9 @@ public class Node
             ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
             host.Open();
-
-            ClientClass.sendMessageTo(1);
             ClientClass.sendMessageTo(1);
 
-            Console.WriteLine($"The service is ready at {baseAddress}/Hello?name=xyz or /SayHello?name=xyz");
+            Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.WriteLine("Press <Enter> to stop the service.");
             Console.ReadLine();
 
@@ -151,20 +160,23 @@ public class ClientClass
     public interface INodeService
     {
         [OperationContract(IsOneWay = true)]
-        [WebGet()]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
         void Message(int from, int to, int tok, int pay);
-
     }
 
-    static public void deliverMessageTo(int from, int to)
+    static public void deliverMessageTo(int from, int to, int tok, int pay)
     {
+        Thread.Sleep(10);
+
         String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
 
         var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
 
         var channel = myChannelFactory.CreateChannel();
 
-        Console.WriteLine($"Arcs deliver message from Node {from} to Node {to} ");
+        Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
+
+        Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {from} {to} {tok} {pay}");
 
         channel.Message(from, to, 1, 1);
 
