@@ -1,51 +1,108 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.ServiceModel.Description;
 using System.Threading;
-
-[ServiceContract()]
-public interface INodeService
-{
-    [OperationContract(IsOneWay = true)]
-    [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
-    void Message(int from, int to, int tok, int pay);
-}
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 
 
-[ServiceBehavior(
-        InstanceContextMode = InstanceContextMode.Single,
-        ConcurrencyMode = ConcurrencyMode.Multiple)]
-public class NodeService : INodeService
-{
+[ServiceBehavior(IncludeExceptionDetailInFaults=true,
+    InstanceContextMode=InstanceContextMode.PerCall,
+    ConcurrencyMode=ConcurrencyMode.Single)]
+public class NodeService : INodeService {
+    public static AutoResetEvent Done = new AutoResetEvent (false);
+    
     public static Func<int> Tid = () => Thread.CurrentThread.ManagedThreadId;
-
+    
     public static Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
 
-
+    //收信反应
     public void Message(int from, int to, int tok, int pay)
     {
         Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
 
-        if (to != 0) {
-            ClientClass.deliverMessageTo(from, to, tok, pay);
+        if (to != 0)
+        {
+            deliverMessageTo(from, to, tok, pay);
         }
 
-        if (to == 0) {
+        if (to == 0)
+        {
             Console.WriteLine("Finish!!!");
         }
-        
+    }
+
+    public static void sendMessageTo(int to, int tok, int pay) {
+        WebChannelFactory<INodeService> wcf = null;
+        OperationContextScope scope = null;
+        try
+        {
+            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
+            var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
+            var channel = myChannelFactory.CreateChannel();
+
+            scope = new OperationContextScope((IContextChannel)channel);
+            Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {Node.ThisNode} {to} {tok} {pay}");
+            channel.Message(Node.ThisNode, to, tok, pay);
+        }
+        catch (Exception ex)
+        {
+            var msg = ($"*** Exception {ex.Message}");
+            Console.Error.WriteLine(msg);
+            Console.WriteLine(msg);
+            wcf = null;
+            scope = null;
+
+        }
+        finally
+        {
+            if (wcf != null) ((IDisposable)wcf).Dispose();
+            if (scope != null) ((IDisposable)scope).Dispose();
+        }
+
+    }
+
+    static public void deliverMessageTo(int from, int to, int tok, int pay)
+    {
+        Thread.Sleep(10);
+
+
+        WebChannelFactory<INodeService> wcf = null;
+        OperationContextScope scope = null;
+        try
+        {
+            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
+            var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
+            var channel = myChannelFactory.CreateChannel();
+
+            Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
+
+            scope = new OperationContextScope((IContextChannel)channel);
+            Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {from} {to} {tok} {pay}");
+            channel.Message(from, to, tok, pay);
+        }
+        catch (Exception ex)
+        {
+            var msg = ($"*** Exception {ex.Message}");
+            Console.Error.WriteLine(msg);
+            Console.WriteLine(msg);
+            wcf = null;
+            scope = null;
+
+        }
+        finally
+        {
+            if (wcf != null) ((IDisposable)wcf).Dispose();
+            if (scope != null) ((IDisposable)scope).Dispose();
+        }
 
     }
 }
 
-
-public class Node
-{
+public class Node {
 
     static public int ThisNode;
     static public ArrayList Adj;
@@ -53,11 +110,14 @@ public class Node
     static public Boolean Open = true;
     static public int Parent;
     static public int rec = 0;
+    static public int payload = 0;
 
     static public Dictionary<string, int> map;
 
-    public static void Main(string[] args)
-    {
+
+    public static void Main (string[] args) {
+        WebServiceHost host = null;
+
 
         //Step 0: Get input
         ArrayList inputList = new ArrayList();
@@ -95,20 +155,8 @@ public class Node
         }
 
         file.Close();
-        Console.WriteLine("There are {0} lines in Config.txt", counter);
-        Console.WriteLine("There are " + map.Count + " real data in the Config file");
-
-
-
-
-
-
-
-
-
-
-
-
+        //Console.WriteLine("There are {0} lines in Config.txt", counter);
+        //Console.WriteLine("There are " + map.Count + " real data in the Config file");
 
 
         //Step 3: Create Host
@@ -117,8 +165,6 @@ public class Node
         Console.WriteLine(url);
         Uri baseAddress = new Uri(url);
 
-        WebServiceHost host = null;
-
         try
         {
 
@@ -126,7 +172,7 @@ public class Node
             ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
             host.Open();
-            ClientClass.sendMessageTo(1,0);
+            NodeService.sendMessageTo(1, 1, 0);
 
             Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.WriteLine("Press <Enter> to stop the service.");
@@ -153,46 +199,3 @@ public class Node
     }
 }
 
-
-public class ClientClass
-{
-    [ServiceContract()]
-    public interface INodeService
-    {
-        [OperationContract(IsOneWay = true)]
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
-        void Message(int from, int to, int tok, int pay);
-    }
-
-    static public void deliverMessageTo(int from, int to, int tok, int pay)
-    {
-        Thread.Sleep(10);
-
-        String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
-
-        var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
-
-        var channel = myChannelFactory.CreateChannel();
-
-        Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
-
-        Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {from} {to} {tok} {pay}");
-
-        channel.Message(from, to, 1, pay);
-
-    }
-
-    static public void sendMessageTo(int NodeNum, int payload)
-    {
-        String arcUrl = "http://localhost:" + Node.map[NodeNum.ToString()].ToString() + "/hello";
-
-        var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
-
-        var channel = myChannelFactory.CreateChannel();
-
-        Console.WriteLine($"*****Node {Node.ThisNode} is sending message to Node {NodeNum} ");
-
-        channel.Message(Node.ThisNode, NodeNum, 1, payload);
-
-    }
-}

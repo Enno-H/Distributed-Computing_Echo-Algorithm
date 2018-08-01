@@ -1,0 +1,6 @@
+Node=2: http://localhost:8082/Message?from=?,to=?,tok=?,payload=?
+... 71751823 2 < 1 2 1 0 *
+... 71751843 2 	> 2 3 1 0
+... 71769827 2 < 3 2 2 2 
+... 71769827 2 	> 2 1 2 3
+Node=2: Parent=1, Payload=3!

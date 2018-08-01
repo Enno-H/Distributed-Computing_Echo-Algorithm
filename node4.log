@@ -1,0 +1,6 @@
+Node=4: http://localhost:8084/Message?from=?,to=?,tok=?,payload=?
+... 71751943 4 < 3 4 1 0 *
+... 71751963 4 	> 4 1 1 0
+... 71757804 4 < 1 4 1 0 
+... 71757804 4 	> 4 3 2 1
+Node=4: Parent=3, Payload=1!
