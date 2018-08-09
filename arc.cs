@@ -67,8 +67,14 @@ public class NodeService : INodeService {
 
     static public void deliverMessageTo(int from, int to, int tok, int pay)
     {
-        Thread.Sleep(10);
+        String key = from.ToString()+"-"+to.ToString();
+        int delayTime = Node.map["-"];
+        if (Node.map.ContainsKey(key)) {
+            delayTime = Node.map[key];
+        }
+        Console.WriteLine($"the delay of {from} to {to} is {delayTime}");
 
+        Thread.Sleep(delayTime);
 
         WebChannelFactory<INodeService> wcf = null;
         OperationContextScope scope = null;
@@ -131,32 +137,28 @@ public class Node {
         Console.WriteLine("The inputList length is " + inputList.Count + " and the first is " + inputList[0]);
 
 
-
-
-
-
-
         //Step 1: Config.txt -> Map
         //Input 1
         int counter = 0;
         string line;
         map = new Dictionary<string, int>();
 
-        System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\Enno\RiderProjects\Learn\Learn\Config.txt");
+        System.IO.StreamReader file = new System.IO.StreamReader("Config4.txt");
+
         while ((line = file.ReadLine()) != null)
         {
             //System.Console.WriteLine (line);  
             counter++;
             if (!line.StartsWith("//"))
             {
-                string[] bit = line.Split(' ');
-                map.Add(bit[0], int.Parse(bit[1]));
+                var bit = System.Text.RegularExpressions.Regex.Split(line, @"\s{1,}");
+                if (bit.Length >= 2)
+                {
+                    map.Add(bit[0], int.Parse(bit[1]));
+                }
             }
         }
-
         file.Close();
-        //Console.WriteLine("There are {0} lines in Config.txt", counter);
-        //Console.WriteLine("There are " + map.Count + " real data in the Config file");
 
 
         //Step 3: Create Host

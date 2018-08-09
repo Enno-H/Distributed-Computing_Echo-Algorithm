@@ -30,7 +30,7 @@ public class NodeService : INodeService {
             if (Node.Visited == false)
             {
                 Node.Parent = from;
-                Node.Visited = true;
+                //Node.Visited = true;
             }
 
             Node.rec++;
@@ -47,9 +47,7 @@ public class NodeService : INodeService {
                 sendToParent(Node.payload + 1);
             }
 
-            Thread.Sleep(1000);
-
-            if (tok == 1 && Node.Open == true)
+            if (tok == 1 && Node.Visited == false)
             {
                 foreach (object neigh in Node.Adj)
                 {
@@ -61,11 +59,8 @@ public class NodeService : INodeService {
                     }
                 }
             }
-            /*
-            if (tok == 2 && Node.Open == true) {
-                ClientClass.sendToParent(Node.payload+1);
-            }
-            */
+
+            Node.Visited = true;
         }
     }
 
@@ -165,21 +160,21 @@ public class Node {
         string line;
         map = new Dictionary<string, int>();
 
-        System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\Enno\RiderProjects\Learn\Learn\Config.txt");
+        System.IO.StreamReader file = new System.IO.StreamReader("Config4.txt");
+
         while ((line = file.ReadLine()) != null)
         {
             //System.Console.WriteLine (line);  
             counter++;
             if (!line.StartsWith("//"))
             {
-                string[] bit = line.Split(' ');
-                map.Add(bit[0], int.Parse(bit[1]));
+                var bit = System.Text.RegularExpressions.Regex.Split(line, @"\s{1,}");
+                if (bit.Length >= 2){
+                    map.Add(bit[0], int.Parse(bit[1]));
+                }
             }
         }
-
         file.Close();
-        //Console.WriteLine("There are {0} lines in Config.txt", counter);
-        //Console.WriteLine("There are " + map.Count + " real data in the Config file");
 
 
         //Step 2: ArrayList -> Node 
