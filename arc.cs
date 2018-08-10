@@ -72,7 +72,7 @@ public class NodeService : INodeService {
         if (Node.map.ContainsKey(key)) {
             delayTime = Node.map[key];
         }
-        Console.WriteLine($"the delay of {from} to {to} is {delayTime}");
+        //Console.WriteLine($"the delay of {from} to {to} is {delayTime}");
 
         Thread.Sleep(delayTime);
 
@@ -130,12 +130,10 @@ public class Node {
         var inputs = Environment.GetCommandLineArgs();
         foreach (var input in inputs)
         {
-            //Console.WriteLine(input);
             inputList.Add(input);
         }
-
-        Console.WriteLine("The inputList length is " + inputList.Count + " and the first is " + inputList[0]);
-
+        String path = inputList[1].ToString();
+        //Console.WriteLine($"Path is :" + path);
 
         //Step 1: Config.txt -> Map
         //Input 1
@@ -143,7 +141,7 @@ public class Node {
         string line;
         map = new Dictionary<string, int>();
 
-        System.IO.StreamReader file = new System.IO.StreamReader("Config4.txt");
+        System.IO.StreamReader file = new System.IO.StreamReader(path);
 
         while ((line = file.ReadLine()) != null)
         {

@@ -30,7 +30,6 @@ public class NodeService : INodeService {
             if (Node.Visited == false)
             {
                 Node.Parent = from;
-                //Node.Visited = true;
             }
 
             Node.rec++;
@@ -53,8 +52,6 @@ public class NodeService : INodeService {
                 {
                     if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                     {
-                        //Console.WriteLine($"... {Millis():F2} {Node.ThisNode} > {Node.ThisNode} {neigh} {tok} {pay}");
-                        //Console.WriteLine($"{Node.Open}");
                         sendMessageTo(Convert.ToInt32(neigh), 1,Node.payload);
                     }
                 }
@@ -151,6 +148,8 @@ public class Node {
             inputList.Add(input);
         }
         inputList.RemoveAt(0);
+        String path = inputList[0].ToString();
+        Console.WriteLine("**Config:"+path);
         inputList.RemoveAt(0);
 
 
@@ -160,11 +159,10 @@ public class Node {
         string line;
         map = new Dictionary<string, int>();
 
-        System.IO.StreamReader file = new System.IO.StreamReader("Config4.txt");
+        System.IO.StreamReader file = new System.IO.StreamReader(path);
 
         while ((line = file.ReadLine()) != null)
         {
-            //System.Console.WriteLine (line);  
             counter++;
             if (!line.StartsWith("//"))
             {
@@ -216,7 +214,7 @@ public class Node {
 
             host.Open();
 
-            var msg = ($"Ping: {baseAddress}Ping?ttl=?");
+            //var msg = ($"Ping: {baseAddress}Ping?ttl=?");
             //Console.Error.WriteLine (msg);
             //Console.WriteLine (msg);
 
