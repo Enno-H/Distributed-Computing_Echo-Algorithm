@@ -22,42 +22,35 @@ public class NodeService : INodeService {
     //收信反应
     public void Message(int from, int to, int tok, int pay)
     {
-        if (Node.Open == true)
+        if (Node.Visited == false)
         {
             Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
-            Node.payload = Node.payload + pay;
-
-            if (Node.Visited == false)
+            Node.Parent = from;
+            if (from != 0)
             {
-                Node.Parent = from;
+                Node.rec++;
             }
+            Node.Visited = true;
 
-            Node.rec++;
-            if (from == 0)
+            foreach (object neigh in Node.Adj)
             {
-                Node.rec = Node.rec - 1;
-            }
-            Console.WriteLine("rec = " + Node.rec);
-
-            if (Node.rec >= Node.Adj.Count)
-            {
-                Node.Open = false;
-                Console.WriteLine($"Node {Node.ThisNode} is closed");
-                sendToParent(Node.payload + 1);
-            }
-
-            if (tok == 1 && Node.Visited == false)
-            {
-                foreach (object neigh in Node.Adj)
+                if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                 {
-                    if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
-                    {
-                        sendMessageTo(Convert.ToInt32(neigh), 1,Node.payload);
-                    }
+                    sendMessageTo(Convert.ToInt32(neigh), 1, Node.payload);
                 }
             }
+        }
+        else {
+            Console.WriteLine($"... {Millis():F2} {Node.ThisNode} < {from} {to} {tok} {pay}");
 
-            Node.Visited = true;
+            Node.rec++;
+            if (tok == 2)
+            {
+                Node.payload = pay+Node.payload;
+            }
+            if (Node.rec == Node.Adj.Count) {
+                sendToParent(Node.payload + 1);
+            }
         }
     }
 
