@@ -19,7 +19,6 @@ public class NodeService : INodeService {
     
     public static Func<double> Millis = () => DateTime.Now.TimeOfDay.TotalMilliseconds;
 
-    //收信反应
     public void Message(int from, int to, int tok, int pay)
     {
         if (Node.Visited == false)
@@ -31,13 +30,15 @@ public class NodeService : INodeService {
                 Node.rec++;
             }
             Node.Visited = true;
-
             foreach (object neigh in Node.Adj)
             {
                 if (!Node.Parent.Equals(Convert.ToInt32(neigh)))
                 {
                     sendMessageTo(Convert.ToInt32(neigh), 1, Node.payload);
                 }
+            }
+            if (Node.Adj.Count == 1) {
+                sendToParent(Node.payload);
             }
         }
         else {
@@ -59,7 +60,7 @@ public class NodeService : INodeService {
         OperationContextScope scope = null;
         try
         {
-            String arcUrl = "http://localhost:" + Node.map["0"].ToString() + "/hello";
+            String arcUrl = "http://localhost:" + Node.map["0"].ToString();
             var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
             var channel = myChannelFactory.CreateChannel();
 
@@ -90,7 +91,7 @@ public class NodeService : INodeService {
         OperationContextScope scope = null;
         try
         {
-            String arcUrl = "http://localhost:" + Node.map["0"].ToString() + "/hello";
+            String arcUrl = "http://localhost:" + Node.map["0"].ToString();
             var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
             var channel = myChannelFactory.CreateChannel();
 
@@ -121,7 +122,6 @@ public class Node {
     static public int ThisNode;
     static public ArrayList Adj;
     static public Boolean Visited = false;
-    static public Boolean Open = true;
     static public int Parent;
     static public int rec = 0;
     static public int payload = 0;
@@ -142,12 +142,10 @@ public class Node {
         }
         inputList.RemoveAt(0);
         String path = inputList[0].ToString();
-        Console.WriteLine("**Config:"+path);
         inputList.RemoveAt(0);
 
 
         //Step 1: Config.txt -> Map
-        //Input 1
         int counter = 0;
         string line;
         map = new Dictionary<string, int>();
@@ -169,7 +167,6 @@ public class Node {
 
 
         //Step 2: ArrayList -> Node 
-        //Input 2
         Parent = -1;
 
         if (inputList.Count < 2)
@@ -178,7 +175,6 @@ public class Node {
         }
         else
         {
-            //ThisNode = (int)inputList[0];
             ThisNode = Convert.ToInt32(inputList[0]);
 
             Adj = new ArrayList();
@@ -188,36 +184,20 @@ public class Node {
                 Adj.Add(inputList[i]);
             }
         }
-        Console.WriteLine($"Id: {ThisNode}, port: {map[ThisNode.ToString()]}");
-        Console.WriteLine($"Neighbours Num:{Adj.Count}, they are:");
-        foreach (object neigh in Node.Adj)
-        {
-            Console.WriteLine($"--{neigh}");
-        }
-
-
         //Step 3: Create Host
 
         try
         {
-            String url = "http://localhost:" + map[ThisNode.ToString()] + "/hello";
+            String url = "http://localhost:" + map[ThisNode.ToString()];
             var baseAddress = new Uri(url);
             host = new WebServiceHost (typeof(NodeService), baseAddress);
             ServiceEndpoint ep = host.AddServiceEndpoint (typeof(INodeService), new WebHttpBinding(), "");
 
             host.Open();
-
-            //var msg = ($"Ping: {baseAddress}Ping?ttl=?");
-            //Console.Error.WriteLine (msg);
-            //Console.WriteLine (msg);
-
-            //NodeService.sendMessageTo(2);
-                        
+            Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.Error.WriteLine ("Press <Enter> to stop the service.");
             Console.ReadLine ();
-            //PingService.Done.WaitOne ();
-            //NodeService.Done.WaitOne();
-
+           
             host.Close ();
         
         } catch (Exception ex) {

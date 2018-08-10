@@ -31,7 +31,7 @@ public class NodeService : INodeService {
 
         if (to == 0)
         {
-            Console.WriteLine("Finish!!!");
+            Console.WriteLine($"Finish!!! The payload is {pay}");
         }
     }
 
@@ -40,7 +40,7 @@ public class NodeService : INodeService {
         OperationContextScope scope = null;
         try
         {
-            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
+            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString();
             var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
             var channel = myChannelFactory.CreateChannel();
 
@@ -72,7 +72,6 @@ public class NodeService : INodeService {
         if (Node.map.ContainsKey(key)) {
             delayTime = Node.map[key];
         }
-        //Console.WriteLine($"the delay of {from} to {to} is {delayTime}");
 
         Thread.Sleep(delayTime);
 
@@ -80,7 +79,7 @@ public class NodeService : INodeService {
         OperationContextScope scope = null;
         try
         {
-            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString() + "/hello";
+            String arcUrl = "http://localhost:" + Node.map[to.ToString()].ToString();
             var myChannelFactory = new WebChannelFactory<INodeService>(new Uri(arcUrl));
             var channel = myChannelFactory.CreateChannel();
 
@@ -133,7 +132,6 @@ public class Node {
             inputList.Add(input);
         }
         String path = inputList[1].ToString();
-        //Console.WriteLine($"Path is :" + path);
 
         //Step 1: Config.txt -> Map
         //Input 1
@@ -145,7 +143,6 @@ public class Node {
 
         while ((line = file.ReadLine()) != null)
         {
-            //System.Console.WriteLine (line);  
             counter++;
             if (!line.StartsWith("//"))
             {
@@ -160,9 +157,7 @@ public class Node {
 
 
         //Step 3: Create Host
-        Console.WriteLine($"Port: {map["0"]}");
-        String url = "http://localhost:" + map["0"] + "/hello";
-        Console.WriteLine(url);
+        String url = "http://localhost:" + map["0"];
         Uri baseAddress = new Uri(url);
 
         try
@@ -172,10 +167,10 @@ public class Node {
             ServiceEndpoint ep = host.AddServiceEndpoint(typeof(INodeService), new WebHttpBinding(), "");
 
             host.Open();
-            NodeService.sendMessageTo(1, 1, 0);
-
             Console.WriteLine($"The service is ready at {baseAddress}/");
             Console.WriteLine("Press <Enter> to stop the service.");
+            NodeService.sendMessageTo(1, 1, 0);
+
             Console.ReadLine();
 
 
