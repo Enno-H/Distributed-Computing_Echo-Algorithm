@@ -37,8 +37,8 @@ public class NodeService : INodeService {
                     sendMessageTo(Convert.ToInt32(neigh), 1, Node.payload);
                 }
             }
-            if (Node.Adj.Count == 1) {
-                sendToParent(Node.payload);
+            if (Node.Adj.Count == 1 && Node.ThisNode!=1) {
+                sendToParent(1);
             }
         }
         else {
